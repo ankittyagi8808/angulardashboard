@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+  <h1 class="title">Welcome to Smart Test Automation DashBoard</h1>
+  </mat-toolbar-row>
+ </mat-toolbar>
+<form>
+<table class = "table">
+<tr>
+<td style="float: left; padding-left: 20%;margin-left: 50%">
+<mat-form-field>
+   
+    <mat-select placeholder=" Select Environment " [(ngModel)]="selectedValue" name="food">
+      <mat-option *ngFor="let food of foods" [value]="food.viewValue">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</td>
+<td>
+<div class="button-row">
+ <button mat-raised-button color="primary" (click)="login()">View Report</button>
+</div>
+</td>
+</tr>
+</table>
+</form>
+<router-outlet></router-outlet>
+ <footer>
+      <mat-toolbar class="mat-primary footer">
+        <h2 class ="title">
+          Contact Us :- smartAutomation@gep.com
+        </h2>
+      </mat-toolbar>
+    </footer>

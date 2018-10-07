@@ -1,0 +1,27 @@
+.txtlabel {
+	float: left;
+    margin-top: 5%;
+    padding-left: 50%;
+    text-align: right;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.table {
+    width: 80%;
+    padding-top: 10%	
+}
+.button-row {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+.title{
+	margin-left: 35%;
+}
+.footer{
+	position:absolute;
+	 bottom:0px; 
+	 height:50px; 
+	 left:0px; 
+	 right:0px; 
+	 overflow:hidden;
+	 
+}

@@ -1,0 +1,52 @@
+<mat-toolbar class="md-hue-2 md-tall" color="primary">
+        <span flex></span>
+        <div layout="row" layout-align="start center">
+          <mat-icon class="mat-avatar" mat-svg-icon="avatars:svg-1"></mat-icon>
+          <span ></span>
+        </div>
+        <span ></span>
+        <div class="mat-body-2">Dashboard Statics</div>
+      </mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': 15 }" opened="true">
+    <mat-nav-list  role="navigation">
+
+      <mat-list-item  class = "changeColor">
+        <mat-icon mat-list-icon >dashboard</mat-icon>
+        <div ></div>
+        <div class="sidenav-item">
+          <h5>Module View</h5>
+        </div>
+      </mat-list-item>
+<mat-divider></mat-divider>
+      <mat-list-item (click) = doTesting()>
+        <mat-icon mat-list-icon>build</mat-icon>
+        <div ></div>
+        <div class="sidenav-item">
+          <h5>Currently Running Builds</h5>
+        </div>
+      </mat-list-item>
+<mat-divider></mat-divider>
+      <mat-list-item >
+        <mat-icon mat-list-icon>archive</mat-icon>
+        <div ></div>
+        <div class="sidenav-item">
+          <h5>Build Logs</h5>
+        </div>
+      </mat-list-item>
+<mat-divider></mat-divider>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+    
+<mat-grid-list cols="4" class="example-sidenav-content" >
+<mat-grid-tile
+      *ngFor="let i of items">
+<app-card  class="card-item"></app-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+</mat-sidenav-container>
+
+
