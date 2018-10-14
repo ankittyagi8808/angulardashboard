@@ -1,4 +1,5 @@
 import { MaterialModule } from '../material/material.module';
+import { JobsModule } from '../viewJobs/Jobs.module';
 import { CardComponent } from './card.component';
 import { DashBoardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -13,7 +14,7 @@ imports: [
      MaterialModule,
      FormsModule,
      BrowserAnimationsModule,
-   DashBoardRoutingModule, CardComponent],
+   DashBoardRoutingModule, CardComponent,JobsModule],
      providers: [],
     bootstrap: [DashboardComponent]
 })

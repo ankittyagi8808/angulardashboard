@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -6,4 +7,11 @@ import {Component} from '@angular/core';
   templateUrl: 'card.html',
   styleUrls: ['card.css'],
 })
-export class CardComponent {}
+export class CardComponent {
+    constructor(public router: Router) {
+
+  }
+  navigateToJobs() {
+    this.router.navigate(['/jobs', 'Rfx']);
+    }
+}

@@ -17,6 +17,8 @@ import { RouterOutlet } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ModularComponent } from './modular/modular.component';
 import { ModularModule } from './modular/modular.module';
+import { JobsComponent } from './viewJobs/Jobs.component';
+import { JobsModule } from './viewJobs/Jobs.module';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { ModularModule } from './modular/modular.module';
     EnvironmentComponent,
     DashboardComponent,
     ModularComponent,
-    CardComponent
+    CardComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { ModularModule } from './modular/modular.module';
     AppRoutingModule,
     DashBoardRoutingModule,
     ModularModule,
-    CardModule
+    CardModule,
+    JobsModule
   ],
   providers: [SelectivePreloadingStrategyService],
   bootstrap: [AppComponent]

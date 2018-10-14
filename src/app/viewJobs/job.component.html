@@ -1,0 +1,45 @@
+<mat-toolbar class="toolbar" >
+        <div class="mat-body-2">Currently Running Jobs</div>
+</mat-toolbar>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': 3 }" opened="true" >
+    <mat-nav-list  role="navigation">
+      <mat-list-item>
+        <div ></div>
+        <div class="sidenav-item">
+          All
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+<mat-grid-list cols="1" class="example-sidenav-content" gutterSize = "5px"   rowHeight="80px" >
+<mat-grid-tile
+      *ngFor="let i of jobsResults2" class = "grid-tile" >
+  <mat-card>
+  <mat-card-content>
+    <div>
+    <span class="margincases">{{i.moduleName}}</span>
+    <br/>
+    <span class = "secondatry-text">Module : RFx</span>
+    <span class = "secondatry-text">|</span>
+    <span class = "secondatry-text">Build No : 50</span>
+    <span class = "secondatry-text">|</span>
+    <span class = "secondatry-text">Client :Ascena</span>
+    <span class = "secondatry-text">|</span>
+    <span class = "secondatry-text">Total TestCases : 100</span>
+    <span class = "secondatry-text">|</span>
+    <span class = "secondatry-text">Passed TestCases : 100</span>
+    <span class = "secondatry-text">|</span>
+    <span class = "secondatry-text">Failed TestCases : 50</span>
+   <span class = "secondatry-text">|</span>
+   <span class = "secondatry-text">In Progress : 50</span>
+   <span class = "secondatry-text">|</span>
+   <span class = "secondatry-text">Start Date : 10/13/2018, 9:05:52 PM</span>
+    </div>
+  </mat-card-content>
+</mat-card>
+ </mat-grid-tile>
+</mat-grid-list>
+</mat-sidenav-content>
+</mat-sidenav-container>
