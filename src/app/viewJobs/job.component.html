@@ -1,5 +1,6 @@
 <mat-toolbar class="toolbar" >
-        <div class="mat-body-2">Currently Running Jobs</div>
+        <mat-icon mat-list-icon class="dashboardIcon">list_alt</mat-icon>
+        <div class="mat-body-2 jobToolBarClass">Live Running Jobs</div>
 </mat-toolbar>
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': 3 }" opened="true" >
@@ -20,22 +21,30 @@
   <mat-card-content>
     <div>
     <span class="margincases">{{i.moduleName}}</span>
-    <br/>
-    <span class = "secondatry-text">Module : RFx</span>
+     <br/>
+    <span class = "secondatry-text">Module :</span>
+	<span class = "secondatry-text module">RFx</span>
     <span class = "secondatry-text">|</span>
-    <span class = "secondatry-text">Build No : 50</span>
+	<span class = "secondatry-text">Build No :</span>
+    <span class = "secondatry-text build">50</span>
     <span class = "secondatry-text">|</span>
-    <span class = "secondatry-text">Client :Ascena</span>
+	 <span class = "secondatry-text ">Client :</span>
+    <span class = "secondatry-text client">Ascena</span>
     <span class = "secondatry-text">|</span>
-    <span class = "secondatry-text">Total TestCases : 100</span>
+	<span class = "secondatry-text ">Total TestCases :</span>
+    <span class = "secondatry-text totaltestcase">100</span>
     <span class = "secondatry-text">|</span>
-    <span class = "secondatry-text">Passed TestCases : 100</span>
+	<span class = "secondatry-text">Passed TestCases :</span>
+    <span class = "secondatry-text passedTestcase">100</span>
     <span class = "secondatry-text">|</span>
-    <span class = "secondatry-text">Failed TestCases : 50</span>
+	<span class = "secondatry-text ">Failed TestCases :</span>
+    <span class = "secondatry-text">50</span>
    <span class = "secondatry-text">|</span>
-   <span class = "secondatry-text">In Progress : 50</span>
+   <span class = "secondatry-text">In Progress :</span>
+   <span class = "secondatry-text inprogress">50</span>
    <span class = "secondatry-text">|</span>
-   <span class = "secondatry-text">Start Date : 10/13/2018, 9:05:52 PM</span>
+   <span class = "secondatry-text">Start Date :</span>
+   <span class = "secondatry-text startDate">10/13/2018, 9:05:52 PM</span>
     </div>
   </mat-card-content>
 </mat-card>

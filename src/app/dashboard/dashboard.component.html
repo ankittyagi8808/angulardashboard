@@ -4,11 +4,11 @@
 <mat-toolbar class="mat-hue-2 mat-tall toolbar">
         <span flex></span>
         <div layout="row" layout-align="start center">
-          <mat-icon class="mat-avatar" mat-svg-icon="avatars:svg-1"></mat-icon>
+          <mat-icon mat-list-icon class ="dashboardIcon" >list</mat-icon>
           <span ></span>
         </div>
         <span ></span>
-        <div class="mat-body-2">Dashboard Statics</div>
+        <div class="mat-body-2 mat-body-color">GEP Automation DashBoard</div>
 </mat-toolbar>
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': 15 }" opened="true" >
@@ -45,7 +45,27 @@
 <mat-grid-list cols="3" class="example-sidenav-content"  gutterSize = "15px" rowHeight="250px" *ngIf=dashBoard>
 <mat-grid-tile
       *ngFor="let i of jobsResults" class = "grid-tile">
-<app-card  class="card-item"></app-card>
+<mat-card class="example-card">
+  <mat-card-header class = 'matCardHeader'>
+    <mat-card-title>{{i.moduleName}}</mat-card-title>
+    <mat-card-subtitle>Total Test Cases : {{i.totalTestcase}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+    <br/>
+     <mat-icon mat-list-icon  class="passed" style="color: green;">check_circle</mat-icon>
+         <span class="margincases">Passed Test Cases : {{i.passedTestCases}}</span>
+         <br/>
+         <mat-icon mat-list-icon style="color: red;">cancel</mat-icon>
+         <span class="margincases">Failed Test Cases : {{i.failedTestCases}}</span>
+      <br/>
+       <mat-icon mat-list-icon style="color: coral;">watch_later</mat-icon><span class="margincases">In Progress : {{i.inProgress}}</span>
+    </p>
+  </mat-card-content>
+  <mat-card-actions class = "matCardFooter">
+    <button mat-flat-button  (click) = navigateToJobs()>View Jobs</button>
+  </mat-card-actions>
+</mat-card>
   </mat-grid-tile>
 </mat-grid-list>
 <div class="grid-container">

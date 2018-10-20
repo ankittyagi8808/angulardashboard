@@ -1,6 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar  class = "toolBarClass">
   <mat-toolbar-row>
-  <h1 class="title">Welcome to Smart Test Automation DashBoard</h1>
+  <h1 class="title">Welcome to GEP Test Automation Dashboard</h1>
   </mat-toolbar-row>
  </mat-toolbar>
 <form>
@@ -19,7 +19,7 @@
 </td>
 <td>
 <div class="button-row">
- <button mat-raised-button color="primary" (click)="login()">View Report</button>
+ <button mat-raised-button class="matButton" (click)="login()">Go</button>
 </div>
 </td>
 </tr>
@@ -27,9 +27,9 @@
 </form>
 <router-outlet></router-outlet>
  <footer>
-      <mat-toolbar class="mat-primary footer">
+      <mat-toolbar class="footer">
         <h2 class ="title">
-          Contact Us :- smartAutomation@gep.com
+          Contact:- smartautomation@gep.com
         </h2>
       </mat-toolbar>
     </footer>

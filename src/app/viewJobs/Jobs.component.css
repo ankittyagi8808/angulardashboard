@@ -12,6 +12,7 @@ background-color:#e4e4e4
 background-color:#0067b0;	
 height:70px;
 left:0;
+top:0;
 position: fixed;
 }
 .mat-card{
@@ -37,3 +38,47 @@ font-family: 'Noto Sans', sans-serif;
  color: #757575;	
  font-size: 0.85714rem;
 }
+.jobToolBarClass{
+	color: white;
+	font-size: 18px;
+	padding-left: 0.5%;
+	
+}
+.dashboardIcon{
+color:white;
+font-size: 25px;
+padding-left:1%
+}
+.module{
+color: darkblue;
+font-weight: 600;		
+}
+.build{
+color: #0067b0;
+font-weight: 600;	
+}
+.client{
+color:darkorange;
+font-weight:600;
+}
+.totaltestcase{
+color: #0067b0;
+font-weight: 600;	
+}
+.passedTestcase{
+color:#228B22;
+font-weight: 600;	
+}
+.failedTestcase{
+color:red;
+font-weight: 600;	
+}
+.inprogress{
+color:orange;
+font-weight: 600;	
+}
+.startDate{
+color:darkgray;
+font-weight: 600;
+}
+	
