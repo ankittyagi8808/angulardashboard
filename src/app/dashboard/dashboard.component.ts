@@ -1,62 +1,46 @@
+import { DashBoardService } from './dashBoard.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 export interface JobResult {
   moduleName: string;
   totalTestcase: string;
   passedTestCases: string;
   failedTestCases: string;
-  inProgress: string;  
+  inProgress: string;
 }
 
-export interface JobResult1 {
-  moduleName: string;
-  totalTestcase: string;
-  passedTestCases: string;
-  failedTestCases: string;
-  inProgress: string;  
-}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  dashBoard;  
+  dashBoard;
   changeColor;
-  constructor(public router: Router) {
+  environmet;
+  jobResults: JobResult[] = [];
+  constructor( public router: Router, private httpclient: HttpClient,private dashBoardService: DashBoardService) {
 
   }
   ngOnInit() {
-  this.dashBoard=true; 
-    this.changeColor='changeColor';
+     this.getHeroes();
+      this.dashBoard = true ;
+      this.changeColor = 'changeColor';
+      this.environmet = this.router.routerState.snapshot.root.queryParams['env'];
   }
-  getData() {
+  getHeroes(): void {
+    this.dashBoardService.getModuleResults()
+      .subscribe(results => this.jobResults = results);
   }
   showDashboard(){
     this.dashBoard=true; 
-    console.log("increase sidenav width");
   }
   showBuild(){
- this.dashBoard=false;
+    this.dashBoard=false;
+  } 
+ navigateToJobs(mod) {
+    this.router.navigate(['jobs'],{ queryParams: { env: this.environmet, moduleName: mod}});
   }
-   jobsResults: JobResult[] = [
-    { moduleName: 'Sourcing', totalTestcase : '150', passedTestCases : '100', failedTestCases : '20', inProgress : '30'},
-    {moduleName: 'P2p', totalTestcase: '200',passedTestCases: '100',failedTestCases: '50',inProgress: '50'},
-    {moduleName: 'Contract', totalTestcase: '175',passedTestCases:'100',failedTestCases:'10',inProgress:'15'},
-    {moduleName: 'Supplier', totalTestcase: '140',passedTestCases:'100',failedTestCases:'10',inProgress:'30'},
-    {moduleName: 'Workspace', totalTestcase: '90',passedTestCases:'50',failedTestCases:'20',inProgress:'20'},
-    {moduleName: 'Platform', totalTestcase: '290',passedTestCases:'200',failedTestCases:'50',inProgress:'40'},
-    {moduleName: 'Report', totalTestcase: '50',passedTestCases:'10',failedTestCases:'20',inProgress:'20'}
-  ];
-  
-  jobsResults1: JobResult1[] = [
-    { moduleName: 'Test', totalTestcase : '150', passedTestCases : '100', failedTestCases : '20', inProgress : '30'},
-    {moduleName: 'Test1', totalTestcase: '200',passedTestCases: '100',failedTestCases: '20',inProgress: '30'},
-    {moduleName: 'Contract', totalTestcase: '175',passedTestCases:'100',failedTestCases:'20',inProgress:'30'},
-  ];
- 
- navigateToJobs() {
-    this.router.navigate(['/jobs', 'Rfx']);
-    }
 }

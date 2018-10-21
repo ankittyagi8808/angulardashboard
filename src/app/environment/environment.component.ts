@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-export interface Food {
-  value: string;
+export interface Env {
   viewValue: string;
 }
 
@@ -18,16 +17,15 @@ export class EnvironmentComponent  {
   }
 selectedValue: string;
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'DEV'},
-    {value: 'pizza-1', viewValue: 'UAT'},
-    {value: 'tacos-2', viewValue: 'PROD'}
+  envs: Env[] = [
+    {viewValue: 'DEV'},
+    {viewValue: 'UAT'},
+    {viewValue: 'PROD'},
+    {viewValue: 'QC'},
+     {viewValue: 'PRODSTAG'}
   ];
 
-  login() {
-    this.router.navigate(['/dashboard', this.selectedValue]);
+  go() {
+    this.router.navigate(['/dashboard'],{ queryParams: { env: this.selectedValue} });
     }
-  doTesting(){
-    
-  }
 }

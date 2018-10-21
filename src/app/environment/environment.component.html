@@ -9,9 +9,9 @@
 <td style="float: left; padding-left: 20%;margin-left: 50%">
 <mat-form-field>
    
-    <mat-select placeholder=" Select Environment " [(ngModel)]="selectedValue" name="food">
-      <mat-option *ngFor="let food of foods" [value]="food.viewValue">
-        {{food.viewValue}}
+    <mat-select placeholder=" Select Environment " [(ngModel)]="selectedValue" name="environment">
+      <mat-option *ngFor="let env of envs" [value]="env.viewValue">
+        {{env.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -19,7 +19,7 @@
 </td>
 <td>
 <div class="button-row">
- <button mat-raised-button class="matButton" (click)="login()">Go</button>
+ <button mat-raised-button class="matButton" (click)="go()">Go</button>
 </div>
 </td>
 </tr>

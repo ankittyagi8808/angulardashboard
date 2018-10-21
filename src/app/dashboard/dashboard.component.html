@@ -44,7 +44,7 @@
   <mat-sidenav-content>
 <mat-grid-list cols="3" class="example-sidenav-content"  gutterSize = "15px" rowHeight="250px" *ngIf=dashBoard>
 <mat-grid-tile
-      *ngFor="let i of jobsResults" class = "grid-tile">
+      *ngFor="let i of  jobResults" class = "grid-tile">
 <mat-card class="example-card">
   <mat-card-header class = 'matCardHeader'>
     <mat-card-title>{{i.moduleName}}</mat-card-title>
@@ -63,7 +63,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions class = "matCardFooter">
-    <button mat-flat-button  (click) = navigateToJobs()>View Jobs</button>
+    <button mat-flat-button  (click) = navigateToJobs(i.moduleName)>View Jobs</button>
   </mat-card-actions>
 </mat-card>
   </mat-grid-tile>

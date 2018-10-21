@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const heroesRoutes: Routes = [
   { path: 'env',  component: EnvironmentComponent },
-   { path: 'dashboard/:id',  component: DashboardComponent }
+   { path: 'dashboard',  component: DashboardComponent }
 ];
 
 @NgModule({

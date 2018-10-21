@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const heroesRoutes: Routes = [
-  { path: 'jobs/:id',  component: JobsComponent }
+  { path: 'jobs',  component: JobsComponent }
 ];
 
 @NgModule({

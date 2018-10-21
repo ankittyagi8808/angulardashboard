@@ -1,12 +1,12 @@
 
-import { DashboardComponent } from './dashboard.component';
+import { TestComponent } from './Test.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 
 const heroesRoutes: Routes = [
-  { path: 'dashboard',  component: DashboardComponent }
+  { path: 'jobs/:id',  component: TestComponent }
 ];
 
 @NgModule({
@@ -17,4 +17,4 @@ const heroesRoutes: Routes = [
     RouterModule
   ]
 })
-export class DashBoardRoutingModule { }
+export class TestRoutingModule { }
